@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.sqlite3
+.DS_Store
+users.db
+.streamlit/secrets.local.toml
