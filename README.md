@@ -1,5 +1,9 @@
 # From Syllabus to Skills: NLP-Driven Skill Gap Analysis Framework
 
+![Python](https://img.shields.io/badge/Python-3.9-blue)
+![Framework](https://img.shields.io/badge/Framework-FastAPI-green)
+![UI](https://img.shields.io/badge/UI-Streamlit-red)
+![License](https://img.shields.io/badge/License-MIT-yellow)
 ## 📌 Overview
 
 *From Syllabus to Skills* is an NLP-driven software system that analyzes academic syllabus documents and compares them with real-world industry job requirements to identify skill gaps.
@@ -7,6 +11,10 @@
 The system extracts skills from syllabus PDFs using natural language processing techniques and matches them against dynamically sourced industry skills to compute a skill gap score and highlight missing competencies.
 
 ---
+## 🌐 Live Demo
+
+Access the deployed application here:  
+👉 https://syllabus2skills.streamlit.app/
 
 ## 🚀 Features
 
@@ -30,6 +38,14 @@ The system extracts skills from syllabus PDFs using natural language processing 
 * **Visualization**: Plotly
 
 ---
+## 📸 Application Preview
+
+### Skill Gap Analysis
+![Demo](assets/demo.png)
+
+### Detailed Analytics
+![Analytics](assets/analysis.png)
+
 
 ## ⚙️ Installation
 
@@ -106,3 +122,12 @@ This project is licensed under the MIT License.
 
 ---
 
+## 📚 Citation
+
+If you use this work, please cite:
+
+@article{syllabus2skills2026,
+  title={From Syllabus to Skills: NLP-Driven Skill Gap Analysis Framework},
+  author={Sai Vishwanath V},
+  year={2026}
+}
