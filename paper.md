@@ -1,5 +1,4 @@
 ---
-
 title: "From Syllabus to Skills: An NLP-Driven Framework for Curriculum–Industry Skill Gap Analysis"
 
 tags:
@@ -19,64 +18,123 @@ authors:
   affiliation: 1
 
 affiliations:
-- name: Mahatma Gandhi Institute of Technology, Gandipet, Hyderabad-500075, India
+- name: Mahatma Gandhi Institute of Technology, Hyderabad, India
   index: 1
 
 date: 2026
+---
 
 # Summary
 
-The rapid evolution of industry requirements has led to a persistent gap between academic curricula and real-world job market expectations. This paper presents From Syllabus to Skills, an NLP-driven software framework designed to automatically analyze and quantify the curriculum–industry skill gap.
+The rapid evolution of industry requirements has created a significant gap between academic curricula and real-world job expectations. This paper presents *From Syllabus to Skills*, an NLP-driven software system that automatically analyzes and quantifies the curriculum–industry skill gap.
 
-The framework accepts academic syllabi in PDF format along with a selected target job role and processes them through an end-to-end pipeline for skill extraction and comparison. Statistical natural language processing techniques such as TF-IDF and cosine similarity are used to identify relevant skills from unstructured syllabus text.
+The framework processes academic syllabus documents and compares extracted skills with industry job requirements using TF-IDF vectorization @salton1988 and cosine similarity techniques. It generates a quantitative skill gap score along with matched and missing skills.
 
-The framework computes a quantitative skill gap score, identifies missing and matched skills, and provides structured analytical outputs. An interactive web-based interface built using Streamlit presents these results through intuitive visualizations, enabling users to clearly interpret strengths and deficiencies in the curriculum.
+The system is implemented as a full-stack application using Streamlit for the frontend, FastAPI for the backend, and Supabase (PostgreSQL) for data storage. It provides an interactive interface for analyzing curriculum effectiveness and identifying skill deficiencies.
 
-The novelty of this work lies in integrating academic syllabus analysis with real-world job datasets in a unified, automated system for quantifiable skill gap assessment. The system can assist institutions in curriculum redesign and improve student employability outcomes.
+The source code is openly available at:  
+https://github.com/SaiVishwanathV/Syllabus2Skills
 
-The proposed system is implemented as a scalable full-stack application using a Streamlit-based frontend, FastAPI backend, and PostgreSQL (Supabase) database, ensuring modularity, performance, and ease of deployment. The job role data is derived from curated real-world job postings, enabling meaningful comparison with industry expectations.
+---
 
 # Statement of Need
 
-The disconnect between academic curricula and rapidly evolving industry requirements has become a critical challenge in higher education. Traditional curriculum design processes are often slow to adapt, resulting in graduates lacking key practical skills demanded by employers. This misalignment contributes to reduced employability and necessitates additional training efforts after graduation.
+Academic curricula often fail to keep pace with rapidly evolving industry demands, resulting in graduates lacking essential practical skills. Traditional curriculum evaluation methods are manual, subjective, and not scalable.
 
-Existing approaches to curriculum evaluation are largely manual, subjective, and limited in scalability. While some tools analyze job market trends or educational content independently, there is a lack of integrated, automated systems that directly compare academic syllabi with industry skill requirements in a quantifiable manner.
+There is a clear need for an automated system that can:
+- Extract skills from academic syllabi  
+- Compare them with real-world job requirements  
+- Quantify the skill gap in a measurable way  
 
-From Syllabus to Skills addresses this gap by providing a software-driven, data-centric framework that bridges academia and industry expectations. By leveraging natural language processing techniques, the system transforms unstructured syllabus documents into structured skill representations and systematically compares them with industry requirements.
+This software addresses that need by providing a data-driven NLP-based framework, building upon prior research on curriculum–industry gaps @ahadi2022skills that bridges academia and industry. It enables students, educators, and institutions to identify missing competencies and improve employability outcomes.
 
-This software enables stakeholders including students, educators, and academic institutions to identify missing competencies, measure curriculum effectiveness, and make informed data-driven decisions. Compared to conventional approaches, the framework offers an automated, scalable, and reproducible solution for continuous curriculum evaluation and improvement.
+---
+
+# Software Description
+
+## Architecture
+
+The system follows a modular full-stack architecture:
+
+- **Frontend**: Streamlit (interactive UI and visualization)  
+- **Backend**: FastAPI (API handling and processing)  
+- **Database**: Supabase (PostgreSQL)  
+
+## NLP Pipeline
+
+- TF-IDF Vectorization @salton1988
+- Cosine Similarity  
+
+## Workflow
+
+1. User uploads a syllabus PDF  
+2. Text is extracted from the document  
+3. Skills are identified using NLP techniques  
+4. Job role skills are retrieved from dataset  
+5. Similarity comparison is performed  
+6. Output generated:
+   - Matched skills  
+   - Missing skills  
+   - Skill gap score  
+
+---
 
 # Features
 
-The software provides the following core capabilities:
+- Automated skill extraction from syllabus PDFs  
+- Industry skill extraction from job datasets  
+- TF-IDF based text vectorization  
+- Cosine similarity for skill matching  
+- Quantitative skill gap scoring  
+- Identification of missing and matched skills  
+- Interactive visualization using Streamlit  
+- Scalable full-stack architecture  
 
-- Automated extraction of skills from academic syllabus PDFs
-- Industry skill extraction from curated job datasets
-- TF-IDF based text vectorization
-- Cosine similarity for skill matching
-- Quantitative skill gap scoring
-- Identification of missing and matched skills
-- Interactive visualization using Streamlit
-- Full-stack architecture with FastAPI and Supabase
+---
 
-# Implementation
+# Example Usage
 
-The system follows a modular architecture consisting of:
+A user uploads a syllabus document and selects the role *Software Engineer*.
 
-- Frontend: Streamlit for visualization and user interaction
-- Backend: FastAPI for request handling and processing
-- Database: Supabase (PostgreSQL) for structured data storage
-- NLP Pipeline: TF-IDF vectorization and cosine similarity
+The system:
+- Extracts skills such as Python, DBMS, and Operating Systems  
+- Compares them with industry requirements  
+- Outputs:
+  - Matched skills: Python, SQL  
+  - Missing skills: Docker, AWS, Microservices  
+  - Skill gap score: 0.45  
 
-The workflow involves extracting text from syllabus documents, identifying relevant skills, comparing them with industry job requirements, and generating interpretable analytical outputs.
+This enables users to clearly understand curriculum deficiencies and align learning outcomes with industry expectations.
 
-# Acknowledgements
+---
 
-The authors would like to thank their mentors and faculty members for their guidance and support throughout this work. We also acknowledge the support provided by Mahatma Gandhi Institute of Technology, Hyderabad.
+# Evaluation
 
-Additionally, we thank the open-source community and contributors of tools such as Streamlit, FastAPI, Scikit-learn, and NLTK.
+The system was tested on multiple syllabus documents and job roles.
 
-# References
+The results demonstrate that:
+- Relevant skills can be effectively extracted from unstructured syllabus text  
+- Missing skills identified align with real-world industry expectations  
+- The computed skill gap score provides a meaningful quantitative indicator  
 
-- Manning, C. D., Raghavan, P., & Schütze, H. (2008). *Introduction to Information Retrieval*. Cambridge University Press.
-- Salton, G., & Buckley, C. (1988). Term-weighting approaches in automatic text retrieval. *Information Processing & Management*, 24(5), 513–523.
+Future enhancements can include transformer-based embeddings to improve semantic understanding and accuracy.
+
+---
+
+# Software Availability
+
+The source code is available at:
+
+https://github.com/SaiVishwanathV/Syllabus2Skills
+
+## Requirements
+
+The software requires Python 3.8 or higher.
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/SaiVishwanathV/Syllabus2Skills.git
+cd Syllabus2Skills
